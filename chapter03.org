@@ -1,6 +1,6 @@
 * 언어의 기초
 ** 스트릭트 모드  
-   
+nn   
    `ECMAScript 3판의 문제를 해결했으며 안전하지 않은 동작에는 에러를
    반환하도록 합니다.` 이 내용에서 3판의 어떤 문제를 해결했다는 건지
    나와있지 않아 짜증나게 함.
@@ -18,24 +18,34 @@
     - 오페라 12+
     - 크롬
 
-*** return 구문 에러 발생
-    return 구문에서 내용 없이 줄바꿈하면 에러가 발생한다.
-    #+begin_src js
-      function returnObject(){
-	  return
-	  {
-	      a:1,
-	      b:2
-	  }
-      }
+** false로 취급되는 값
+   - null
+   - undefined
+   - 0
+   - false
+** return 구문 에러 발생
+   return 구문에서 내용 없이 줄바꿈하면 에러가 발생한다.
+   #+begin_src js
+     function returnObject(){
+	 return
+	 {
+	     a:1,
+	     b:2
+	 }
+     }
 
-      console.log(returnObject())
+     console.log(returnObject())
 
-    #+end_src
+   #+end_src
 
-    #+RESULTS:
+   #+RESULTS:
    
    
 
    
 
+** 함수
+*** 스트릭트 모드 제한
+    - 함수의 이름에 eval이나 arguments를 사용할 수 없음.
+    - 매개변수 이름에도 eval이다 arguments를 사용할 수 없음.
+    - 서로 다른 매개변수에 다른 이름을 쓸 수 없음.
